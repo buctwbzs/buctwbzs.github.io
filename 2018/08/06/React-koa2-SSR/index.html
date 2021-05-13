@@ -5,49 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>buctwbzs - buctwbzs blog</title>
-
+    <title>React-koa2-SSR - buctwbzs</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="buctwbzs,"> 
-    <meta name="description" content="buctwbzs&#39;s blog,"> 
+    <meta name="description" content="buctwbzs&#39;s blog,本文通过构建一个React SSR项目来介绍React16服务器端渲染相关技术，包括：
+
+环境配置和webpack4+配置
+前端项目
+SSR
+SSR时如何处理React-router、Redux、s,"> 
     <meta name="author" content="buctwbzs"> 
     <link rel="alternative" href="atom.xml" title="buctwbzs" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.ico"> 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    
     <link rel="stylesheet" href="/css/diaspora.css">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8691406134231910",
-        enable_page_level_ads: true
-      });
-    </script>
-
 </head>
 </html>
 <body class="loading">
+    <span id="config-title" style="display:none">buctwbzs</span>
     <div id="loader"></div>
     <div id="single">
     <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
-    <a class="icon-home image-icon" href="javascript:;"></a>
-    <div title="播放/暂停" class="icon-play"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
     <h3 class="subtitle">React-koa2-SSR</h3>
     <div class="social">
-        <!--<div class="like-icon">-->
-            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-        <!--</div>-->
         <div>
             <div class="share">
-                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
             <div id="qr"></div>
         </div>
     </div>
     <div class="scrollbar"></div>
 </div>
+
     <div class="section">
         <div class="article">
     <div class='main'>
@@ -237,6 +232,7 @@
         </div>
         
     <div id='gitalk-container' class="comment link"
+		data-enable=''
         data-ae='true'
         data-ci='2d71ca6b9ce130171bba'
         data-cs='2d8a5c0756c6b9fd1f5ecb9f8faf0ade2c08579b'
@@ -249,19 +245,16 @@
 
     </div>
     
-        <div class='side'>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础工作"><span class="toc-number">1.</span> <span class="toc-text">基础工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#环境设置"><span class="toc-number">1.1.</span> <span class="toc-text">环境设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目初始化"><span class="toc-number">1.2.</span> <span class="toc-text">项目初始化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始吧！-⌨️"><span class="toc-number">2.</span> <span class="toc-text">开始吧！ ⌨️</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#迈出第一步！🕺"><span class="toc-number">2.1.</span> <span class="toc-text">迈出第一步！🕺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最简单SSR🤗"><span class="toc-number">2.2.</span> <span class="toc-text">最简单SSR🤗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#完整的html🤡"><span class="toc-number">2.3.</span> <span class="toc-text">完整的html🤡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#界面太丑了-😤"><span class="toc-number">2.4.</span> <span class="toc-text">界面太丑了 😤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不停build累skr人-😎"><span class="toc-number">2.5.</span> <span class="toc-text">不停build累skr人 😎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拥抱React16"><span class="toc-number">2.6.</span> <span class="toc-text">拥抱React16</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更进一步-🤔"><span class="toc-number">3.</span> <span class="toc-text">更进一步 🤔</span></a></li></ol>
-        </div>
-    
 </div>
 
 
     </div>
 </div>
 </body>
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
 <script src="/js/diaspora.js"></script>
 <link rel="stylesheet" href="/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
@@ -315,6 +308,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 
